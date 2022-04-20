@@ -13,7 +13,7 @@ const { getVideoDurationInSeconds } = require('get-video-duration');
 
 var nodemailer = require("nodemailer");
 
-var mainURL = "127.0.0.1:8060";
+var mainURL = "http://localhost:3000/";
 
 app.use(bodyParser.json( { limit: "10000mb" } ));
 app.use(bodyParser.urlencoded( { extended: true, limit: "10000mb", parameterLimit: 1000000 } ));
