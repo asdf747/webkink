@@ -13,7 +13,7 @@ const { getVideoDurationInSeconds } = require('get-video-duration');
 
 var nodemailer = require("nodemailer");
 
-var mainURL = "http://localhost:3000/";
+var mainURL = "https://kinkyhub.tk/";
 
 app.use(bodyParser.json( { limit: "10000mb" } ));
 app.use(bodyParser.urlencoded( { extended: true, limit: "10000mb", parameterLimit: 1000000 } ));
@@ -43,9 +43,9 @@ function getUser(userId, callBack) {
 		}
 	});
 }
-
-http.listen(3000, function () {
-	console.log("Server started at ");
+const port = process.env.PORT
+http.listen(process.env.PORT, function () {
+	console.log(`Server started at ${port}`);
 
 	socketIO.on("connection", function (socket) {
 		//
